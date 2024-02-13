@@ -1,0 +1,14 @@
+        /* CSS стили для красивого меню */
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            color: lightgray;
+        }
