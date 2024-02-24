@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online lotto</title>
+<style type="text/css">
+body{margin:0; padding:0; font-family:arial, helvetica, sans-serif; font-size:14px;}
 
+#wrapper{
+	padding:20px;
+	text-align:center;
+}
+
+.button{
+	display: inline-block;
+	outline: 0;
+	border: none;
+	padding: 8px 18px;
+	border-radius: 6px;
+	color: white;
+	background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	cursor:pointer;
+}
+.button:hover, button:active{background: linear-gradient(180deg, #2461ba 0%, #2461ba 100%);}
+
+table{border-collapse: collapse;}
+table tr{background-color:#f9fafb;}
+table td{background-color:#fafafb; border:1px solid #dddddd; min-width:17px;}
+table th{border:1px solid #dddddd;}
+table{margin:10px auto; text-align:center;}
+td, th{padding:10px; vertical-align: top;}
+table tr:nth-child(odd) td{background-color:white;}
+
+#ticket{display:inline-block; padding:10px; border:2px solid #ffcd17; border-radius:15px;}
+#title{font-size:20px;}
+
+*:focus {outline: none;}
+</style>
+<script type="text/javascript">
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+  while (currentIndex > 0) {
+	randomIndex = Math.floor(Math.random() * currentIndex);
+	currentIndex--;
+	[array[currentIndex], array[randomIndex]] = [
+	  array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function done() {
+	document.getElementById('ticket').innerHTML = '<div id="title" onclick="changeTitle()">Билет *нажми меня*</div>';
+
+	let Matr = [];
+	for (let i = 0; i < 9; i++) {
+	
+		let Nums = [];
+		for (let j = 1; j < 11; j++)
+			Nums.push(j + (i * 10));
+		shuffle(Nums);
+		
+		for (let j = 1; j < 5; j++)
+			Nums.splice(0, 1);
+			
+		Matr.push(Nums);
+	}
+	
+	let Matr2 = [];
+	
+	// Вращаем назад
+	for (let i = 0; i < 6; i++) {
+		let Nums = [];
+		for (let j = 0; j < 9; j++) 
+			Nums.push(Matr[j][i]);
+		Matr2.push(Nums);
+	}
+	
+	let numsStr = '';
+	let numsStr2 = '';
+	
+	for (let i = 0; i < 6; i++) {
+		if (i == 3) {
+			numsStr2 = numsStr;
+			numsStr = '';
+		}
+		numsStr += '<tr>';
+		
+		// В строке всего 5 символов, генерируем случайные 5 индексов из 10
+		let ExcludeCells = [];
+		for (let m = 0; m < 9; m++)
+			ExcludeCells.push(m);
+
+		// Удаляем лишние
+		shuffle(ExcludeCells);
+		for (let m = 0; m < 5; m++)
+			ExcludeCells.splice(0, 1);
+			
+		let Rand = 0;
+		
+		for (let j = 0; j < 9; j++) {
+			if (ExcludeCells.indexOf(j) == -1) {
+				numsStr += '<td>' + Matr2[i][j] + '</td>';
+			} else 
+				numsStr += '<td></td>';
+		}
+		numsStr += '</tr>';
+	}
+	document.getElementById('ticket').innerHTML += '<table><tbody>' + numsStr2 + '</tbody></table>';
+	document.getElementById('ticket').innerHTML += '<table><tbody>' + numsStr + '</tbody></table>';
+}
+
+function changeTitle() {
+	let name = prompt('Название:', '');
+	if (name != null && name.trim() != '')
+		document.getElementById('title').innerHTML = 'Билет ' + name;
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+	done();
+});
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="ticket"></div>
+		<br><br>
+		<div class="button" onclick="done()">Новый билет</div>
+	</div>
+</body>
+</html>
