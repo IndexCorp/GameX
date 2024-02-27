@@ -1,0 +1,17 @@
+{
+    "attributes": [
+      {
+        "trait_type": "Level",
+        "value": "1"
+      }
+    ],
+    "description": "Gram Givers",
+    "name": "Gram Givers #1",
+    "image": "https://indexcorp.github.io/nftcollection/img/1.png",
+    "buttons": [
+      {
+        "label": "Telegram channel",
+        "uri": "https://t.me/giversgram"
+      }
+    ]
+  }
