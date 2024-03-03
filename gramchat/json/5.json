@@ -1,0 +1,17 @@
+{
+    "attributes": [
+      {
+        "trait_type": "Number",
+        "value": "5"
+      }
+    ],
+    "description": "Куда ударение ставить😂",
+    "name": "Memes Gram chat #5",
+    "image": "https://indexcorp.github.io/nftcollection/gramchat/img/5.png",
+    "buttons": [
+      {
+        "label": "Gram Чат",
+		"uri": "https://t.me/tonbasechat"
+      }
+    ]
+  }
