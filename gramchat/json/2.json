@@ -1,0 +1,18 @@
+{
+    "attributes": [
+      {
+        "trait_type": "Number",
+        "value": "2"
+      }
+    ],
+    "description": "Запомни и не путай! Грам это база, дичь это утка.",
+    "name": "Memes Gram chat #2",
+    "image": "https://indexcorp.github.io/nftcollection/gramchat/img/2.png",
+    "buttons": [
+      {
+        "label": "Gram Чат",
+		"color": "blue",
+        "uri": "https://t.me/tonbasechat"
+      }
+    ]
+  }
