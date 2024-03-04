@@ -1,0 +1,18 @@
+{
+    "attributes": [
+      {
+        "trait_type": "Level",
+        "value": "1"
+      }
+    ],
+	"content_url": "https://indexcorp.github.io/nftcollection/givgr/content/1.mp4",
+    "description": "This NFT is reusable and can be used in the upcoming $Gram coin giveaways.",
+    "name": "Gram Givers #1",
+    "image": "https://indexcorp.github.io/nftcollection/img/1.png",
+    "buttons": [
+      {
+        "label": "Telegram channel",
+        "uri": "https://t.me/+2PVgivJWSFxhNWI8"
+      }
+    ]
+  }
