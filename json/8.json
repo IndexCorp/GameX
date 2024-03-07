@@ -5,13 +5,14 @@
         "value": "1"
       }
     ],
-    "description": "This NFT is reusable and can be used in the upcoming $Gram coin giveaways.",
-    "name": "Gram Givers #8",
+	"content_url": "https://indexcorp.github.io/nftcollection/givgr/content/1_1.mp4",
+    "description": "NFT Gram Gramilla, captivating with their digital power and exotic beauty. Let these mighty creations express your individuality in the world of crypto art technologies!",
+    "name": "Gram Gramilla #8",
     "image": "https://indexcorp.github.io/nftcollection/img/1.png",
     "buttons": [
       {
-        "label": "Telegram channel",
-        "uri": "https://t.me/giversgram"
+        "label": "Participate",
+        "uri": "https://t.me/+2PVgivJWSFxhNWI8"
       }
     ]
   }
