@@ -1,0 +1,12 @@
+{
+  "content_url": "https://cdn.joincommunity.xyz/nft/bybit/content.mp4",
+  "description": "Discover TON’s esteemed partners and allies, and unlock exclusive offers from them! Bybit, the world's third most visited crypto exchange, has joined hands with TON Foundation to introduce the Bybit x TON campaigns. Earn this collectible by fulfilling all social and exchange tasks. Now, you possess one of the exclusive co-branded SBTs from TON, with more dual benefits to anticipate in the future!",
+  "name": "TON x Bybit SBT",
+  "image": "https://cdn.joincommunity.xyz/nft/bybit/logo.png",
+  "buttons": [
+    {
+      "label": "View at TON Society",
+      "uri": "https://society.ton.org/welcome"
+    }
+  ]
+}
