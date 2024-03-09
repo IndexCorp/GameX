@@ -1,0 +1,12 @@
+{
+  "content_url": "ifps://QmY8L3tCPr9Bm1rgPTgRwS6t894bo6oYxHJcUzvXmyRu7u/1.mp4",
+  "description": "A default skin in the form of an inverted logo of the cryptocurrency TON. Given to all players upon registration.",
+  "name": "NOT Skin: Notcoin #0",
+  "image": "ifps://QmR5dQYEkyi2BcTJU7ZND6DoYzpGvNemCxSK8H7wRoEVSa/1.jpg",
+  "attributes": [
+    {
+      "trait_type": "Level",
+      "value": "Basic"
+    }
+  ]
+}
