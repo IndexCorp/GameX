@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открыть JSON-файл</title>
+</head>
+<body>
 
+<!-- Создаем кнопки для выбора файла -->
+<button onclick="loadFiles('gh/json/1.json', 'https://aqua-imperial-tapir-257.mypinata.cloud/ipfs/QmW4SShAfBZ7HBJAARBptJmWpf4APz7cxjKDxbZ7XMAFGJ/1.mp4', 'https://aqua-imperial-tapir-257.mypinata.cloud/ipfs/QmW4SShAfBZ7HBJAARBptJmWpf4APz7cxjKDxbZ7XMAFGJ/1.jpg')">Загрузить #1</button>
+<button onclick="loadFiles('gh/json/2.json', 'https://aqua-imperial-tapir-257.mypinata.cloud/ipfs/QmW4SShAfBZ7HBJAARBptJmWpf4APz7cxjKDxbZ7XMAFGJ/2.mp4', 'https://aqua-imperial-tapir-257.mypinata.cloud/ipfs/QmW4SShAfBZ7HBJAARBptJmWpf4APz7cxjKDxbZ7XMAFGJ/2.jpg')">Загрузить #2</button>
+<button onclick="loadFiles('gh/json/3.json', 'https://aqua-imperial-tapir-257.mypinata.cloud/ipfs/QmW4SShAfBZ7HBJAARBptJmWpf4APz7cxjKDxbZ7XMAFGJ/3.mp4', 'https://aqua-imperial-tapir-257.mypinata.cloud/ipfs/QmW4SShAfBZ7HBJAARBptJmWpf4APz7cxjKDxbZ7XMAFGJ/1.jpg')">Загрузить #3</button>
+<button onclick="loadFiles('gh/json/4.json', 'https://aqua-imperial-tapir-257.mypinata.cloud/ipfs/QmW4SShAfBZ7HBJAARBptJmWpf4APz7cxjKDxbZ7XMAFGJ/4.mp4', 'https://aqua-imperial-tapir-257.mypinata.cloud/ipfs/QmW4SShAfBZ7HBJAARBptJmWpf4APz7cxjKDxbZ7XMAFGJ/2.jpg')">Загрузить #4</button>
+<button onclick="loadFiles('2.json', 'NFT_Video2.mp4', 'NFT2_Category.jpg')">Загрузить 2.json, видео NFT_Video2 и фото NFT2_Category.jpg</button>
+<button onclick="loadFiles('3.json', 'NFT_Video3.mp4', 'NFT3_Category.jpg')">Загрузить 3.json, видео NFT_Video3 и фото NFT3_Category.jpg</button>
+<button onclick="loadFiles('4.json', 'NFT_Video4.mp4', 'NFT4_Category.jpg')">Загрузить 4.json, видео NFT_Video4 и фото NFT4_Category.jpg</button>
+<button onclick="loadFiles('pytonconnect-manifest.json')">Загрузить pytonconnect-manifest.json</button>
+<pre id="jsonContent"></pre>
+<video id="videoPlayer" controls></video>
+<img id="image" alt="NFT Image">
+
+<script>
+    // Функция для выполнения запроса на загрузку JSON-файла
+    function loadJSONFile(filename) {
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const jsonData = JSON.parse(xhr.responseText);
+                    document.getElementById('jsonContent').textContent = JSON.stringify(jsonData, null, 2);
+                } else {
+                    document.getElementById('jsonContent').textContent = 'Ошибка при загрузке JSON-файла.';
+                }
+            }
+        };
+
+        const url = `https://danil1110.github.io/NFTcollcetion/${filename}`;
+        xhr.open('GET', url, true);
+        xhr.send();
+    }
+
+    // Функция для выполнения запроса на загрузку видеофайла
+    function loadVideoFile(filename) {
+        document.getElementById('videoPlayer').src = `https://danil1110.github.io/NFTcollcetion/${filename}`;
+    }
+
+    // Функция для выполнения запроса на загрузку изображения
+    function loadImageFile(filename) {
+        document.getElementById('image').src = `https://danil1110.github.io/NFTcollcetion/${filename}`;
+    }
+
+    // Общая функция для загрузки всех файлов
+    function loadFiles(jsonFilename, videoFilename, imageFilename) {
+        loadJSONFile(jsonFilename);
+        loadVideoFile(videoFilename);
+        loadImageFile(imageFilename);
+    }
+</script>
+
+</body>
+</html>
